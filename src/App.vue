@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <AppTemplate applicationName="Current consumption"/>
+    <AppTemplate
+      applicationName="Current consumption"
+      v-bind:navigation="navigation"/>
   </div>
 </template>
 <script>
@@ -12,6 +14,14 @@ export default {
   components: {
     AppTemplate,
   },
+  data(){
+    return {
+      navigation: [
+        {label: 'Current', icon: 'banana', route: '/'},
+        {label: 'History', icon: 'banana', route: '/History'},
+      ]
+    }
+  }
 }
 </script>
 <style>

@@ -42,8 +42,9 @@ export default {
   },
   mounted(){
     this.dataCollection.loaded = false;
-    this.axios.get('https://current.maximemoreillon.com/data')
+    this.axios.get(`${process.env.VUE_APP_API_URL}/data`)
     .then(response => {
+      //console.log(response.data[0])
       // Empty array
         this.dataCollection.labels.splice(0,this.dataCollection.labels.length)
         this.dataCollection.datasets[0].data.splice(0,this.dataCollection.datasets[0].data.length)
