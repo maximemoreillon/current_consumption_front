@@ -13,7 +13,7 @@ export default {
 
       maintainAspectRatio: false,
       legend: {
-        display: false,
+        //display: false,
       },
       scales: {
         xAxes: [{

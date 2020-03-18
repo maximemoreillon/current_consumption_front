@@ -27,7 +27,27 @@ export default {
 
         datasets: [
           {
-            label: 'Current consumption',
+            label: 'Phase 1',
+            data: [], // filled by API call
+            borderColor: '#4286f4',
+            fill: false,
+            pointRadius: 0,
+            pointHitRadius: 3,
+            pointHoverRadius: 3,
+            borderWidth: 2,
+          },
+          {
+            label: 'Phase 2',
+            data: [], // filled by API call
+            borderColor: '#12ba77',
+            fill: false,
+            pointRadius: 0,
+            pointHitRadius: 3,
+            pointHoverRadius: 3,
+            borderWidth: 2,
+          },
+          {
+            label: 'Total',
             data: [], // filled by API call
             borderColor: '#c00000',
             fill: false,
@@ -35,7 +55,7 @@ export default {
             pointHitRadius: 3,
             pointHoverRadius: 3,
             borderWidth: 2,
-          }
+          },
         ],
       }
     }
@@ -48,9 +68,13 @@ export default {
       // Empty array
         this.dataCollection.labels.splice(0,this.dataCollection.labels.length)
         this.dataCollection.datasets[0].data.splice(0,this.dataCollection.datasets[0].data.length)
+        this.dataCollection.datasets[0].data.splice(0,this.dataCollection.datasets[1].data.length)
+        this.dataCollection.datasets[2].data.splice(0,this.dataCollection.datasets[1].data.length)
         // repopulate
         response.data.forEach(entry => {
-          this.dataCollection.datasets[0].data.push(Number(entry.total))
+          this.dataCollection.datasets[0].data.push(Number(entry.phase_1))
+          this.dataCollection.datasets[1].data.push(Number(entry.phase_2))
+          this.dataCollection.datasets[2].data.push(Number(entry.total))
           this.dataCollection.labels.push(new Date(entry.time))
         })
 
