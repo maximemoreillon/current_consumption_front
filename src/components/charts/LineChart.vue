@@ -16,12 +16,18 @@ export default {
         //display: false,
       },
       scales: {
+
         xAxes: [{
           type: 'time',
           time: {
             displayFormats: { quarter: 'MMM YYYY'}
           }
         }],
+        yAxes: [{
+          stacked: true,
+        }]
+
+
       },
       elements: {
         line: {
