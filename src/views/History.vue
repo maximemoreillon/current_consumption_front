@@ -31,11 +31,11 @@ export default {
             data: [], // filled by API call
             borderColor: '#4286f4',
             fill: true,
-            backgroundColor: '#4286f4',
+            backgroundColor: '#4286f455',
             pointRadius: 0,
             pointHitRadius: 3,
             pointHoverRadius: 3,
-            borderWidth: 2,
+            borderWidth: 1,
           },
 
           {
@@ -43,11 +43,11 @@ export default {
             data: [], // filled by API call
             borderColor: '#12ba77',
             fill: true,
-            backgroundColor: '#12ba77',
+            backgroundColor: '#12ba7755',
             pointRadius: 0,
             pointHitRadius: 3,
             pointHoverRadius: 3,
-            borderWidth: 2,
+            borderWidth: 1,
           },
 
           /*
