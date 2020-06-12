@@ -18,7 +18,7 @@ export default {
     return {
       navigation: [
         {label: 'Current', icon: 'banana', route: '/'},
-        {label: 'History', icon: 'banana', route: '/History'},
+        {label: 'History', icon: 'banana', route: '/history'},
       ]
     }
   }
