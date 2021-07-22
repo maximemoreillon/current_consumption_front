@@ -1,8 +1,13 @@
 <template>
   <div id="app">
     <AppTemplate
-      applicationName="Current consumption"
-      v-bind:navigation="navigation"/>
+      :options="options">
+      <template v-slot:nav>
+        <router-link to="/">Current</router-link>
+        <router-link to="/history">History</router-link>
+      </template>
+      <router-view />
+    </AppTemplate>
   </div>
 </template>
 <script>
@@ -16,14 +21,18 @@ export default {
   },
   data(){
     return {
-      navigation: [
-        {label: 'Current', icon: 'banana', route: '/'},
-        {label: 'History', icon: 'banana', route: '/history'},
-      ]
+      options: {
+        title: 'Current consumption',
+        authenticate: true,
+        login_url: `${process.env.VUE_APP_AUTHENTICATION_API_URL}/login`,
+        identification_url: `${process.env.VUE_APP_AUTHENTICATION_API_URL}/whoami`
+      },
     }
   }
 }
 </script>
 <style>
-
+main {
+  padding-top: 3em;
+}
 </style>

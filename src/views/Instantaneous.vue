@@ -60,11 +60,14 @@ export default {
 <style scoped>
 
 .instantaneous_view {
+  
+  height: 80vh;
   display: flex;
   align-items: stretch;
   justify-content: center;
 }
 .meter {
+
   padding: 2px;
   border: 2px solid #dddddd;
   width: 400px;

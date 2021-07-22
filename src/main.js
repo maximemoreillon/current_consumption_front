@@ -6,6 +6,7 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import VueSocketIOExt from 'vue-socket.io-extended';
 import io from 'socket.io-client';
+import './registerServiceWorker'
 
 const socket = io(process.env.VUE_APP_API_URL);
 
