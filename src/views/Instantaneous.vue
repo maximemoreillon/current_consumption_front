@@ -36,23 +36,26 @@ export default {
       max_current: 30,
     }
   },
+  mounted(){
+    this.get_current_consumption()
+  },
   methods: {
     height(phase){
       return  `${100 * phase/this.max_current}%`
     },
+    get_current_consumption(){
+      this.axios.get(`${process.env.VUE_APP_API_URL}/current_consumption`)
+      .then(({data}) => { this.current_consumption = data})
+      .catch(error => {console.error(error)})
+    }
 
   },
   sockets: {
-    connect() {
-      this.$socket.client.emit('get_current_consumption', {});
-    },
     current_consumption(message) {
       this.current_consumption = message
     }
   },
-  mounted(){
-    this.$socket.client.emit('get_current_consumption', {});
-  }
+
 
 }
 </script>
@@ -60,7 +63,7 @@ export default {
 <style scoped>
 
 .instantaneous_view {
-  
+
   height: 80vh;
   display: flex;
   align-items: stretch;
