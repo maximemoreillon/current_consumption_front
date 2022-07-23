@@ -1,4 +1,6 @@
-# current_consumption_front
+# Current consumption GUI
+
+This application has been deprecated as it can easily be replaced with a Grafana dashboard
 
 ## Project setup
 ```
